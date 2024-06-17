@@ -1,0 +1,13 @@
+MATERIAL chequeredWhite 0.9 0.9 0.9 0.0 1
+MATERIAL metalShinyGrey 0.8 0.8 0.8 0.0 2
+MATERIAL diffuseWhite 	0.9 0.9 0.9 0.0 0
+MATERIAL lightsource 	2.0 2.0 2.0 0.0 3 
+
+SPHERE chequeredWhite 	0.0 -100.5 -1.0 100.0 	# floor
+SPHERE metalShinyGrey 	0.0 0.0 -1.0 0.5 	# middle sphere
+SPHERE metalShinyGrey 	0.0 0.0 -104.0 100.0 	# back wall
+SPHERE metalShinyGrey 	-103.0 0.0 -1.0 100.0 	# left wall
+SPHERE metalShinyGrey 	103.0 0.0 -1.0 100.0 	# right wall
+SPHERE metalShinyGrey 	0.0 0.0 104.0 100.0 	# front wall
+SPHERE diffuseWhite 	0.0 104.0 -1.0 100.0 	# ceiling
+SPHERE lightsource 	0.0 3.0 -1.0 1.0 	# light source
