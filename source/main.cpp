@@ -144,7 +144,7 @@ int main(int argc, char** argv) {
 		}
 	} else {
 		std::cout << "Invalid program use:" << std::endl;
-		std::cout << "raytrace <scene path> <width> <height>[samples = 500][max depth = 50]" << std::endl;
+		std::cout << "raytrace <scene path> <width> <height> [samples = 500][max depth = 50]" << std::endl;
 		return -1;
 	}
 
