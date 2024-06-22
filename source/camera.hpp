@@ -5,6 +5,8 @@
 #include "hostStructs.hpp"
 
 class Camera {
+private:
+	cl_Camera clCamera;
 public:
 	vec3 position{ 1.0f, 1.0f, 1.0f };
 	vec3 up{ 0.0f, 1.0f, 0.0f };

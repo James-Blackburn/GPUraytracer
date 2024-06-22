@@ -1,6 +1,8 @@
 #ifndef HOST_STRUCTS_HPP_INCLUDED
 #define HOST_STRUCTS_HPP_INCLUDED
 
+#define CL_TARGET_OPENCL_VERSION 120
+
 #include <CL/cl.h>
 
 struct cl_Camera {

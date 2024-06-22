@@ -1,6 +1,7 @@
 #ifndef HELPER_HPP_INCLUDED
 #define HELPER_HPP_INCLUDED
 
+#define CL_TARGET_OPENCL_VERSION 120
 #define _CRT_SECURE_NO_WARNINGS 
 
 #include <CL/cl.h>

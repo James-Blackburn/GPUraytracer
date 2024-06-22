@@ -1,6 +1,8 @@
 #ifndef VEC3_HPP_INCLUDED
 #define VEC3_HPP_INCLUDED
 
+#define CL_TARGET_OPENCL_VERSION 120
+
 #include <cmath>
 #include <CL/cl.h>
 

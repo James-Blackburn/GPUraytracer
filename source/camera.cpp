@@ -23,8 +23,10 @@ const cl_Camera& Camera::getProjection(float screenWidth, float screenHeight) {
 	const vec3 VIEWPORT00 = position - front - VIEWPORT_U * 0.5f - VIEWPORT_V * 0.5f;
 
 	// calculate final projection data
-	return {
-		VIEWPORT00 + (PIXEL_DELTA_U + PIXEL_DELTA_V) * 0.5f, // pixel00Center
-		PIXEL_DELTA_U, PIXEL_DELTA_V, position 
-	};
+	clCamera.pixel00Center = VIEWPORT00 + (PIXEL_DELTA_U + PIXEL_DELTA_V) * 0.5f;
+	clCamera.pixelDeltaU = PIXEL_DELTA_U;
+	clCamera.pixelDeltaV = PIXEL_DELTA_V;
+	clCamera.cameraPosition = position;
+
+	return clCamera;
 }

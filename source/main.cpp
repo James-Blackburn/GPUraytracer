@@ -46,7 +46,7 @@ void raytraceScene(KernelProgram& kpRaytrace, std::vector<cl_Sphere>& spheres, i
 	double elapsedTime = 0.0;
 
 	// calculate workgroup sizes
-	const size_t GLOBAL_WG_SIZE[2] = {renderWidth, renderHeight};
+	const size_t GLOBAL_WG_SIZE[2] = {static_cast<size_t>(renderWidth), static_cast<size_t>(renderHeight)};
 	const size_t LOCAL_WG_SIZE[2] = {LOCAL_WG_SIZE_X, LOCAL_WG_SIZE_Y};
 
 	// initialise camera
