@@ -189,5 +189,5 @@ __kernel void traceSamples(__constant Camera* camera,
 __kernel void averageSamples(__global float3* render, uint nSamples) {
 	// get final pixel colour from averaging samples, sqrt() for gamma correcting
 	const uint gid = get_global_id(1) * get_global_size(0) + get_global_id(0);
-	render[gid] = min(half_sqrt(render[gid] / (float)nSamples), 0.999f);
+	render[gid] = half_sqrt(render[gid] / (float)nSamples);
 }

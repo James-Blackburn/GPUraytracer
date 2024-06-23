@@ -23,17 +23,17 @@ void writeToPPM(const char* filename, cl_float3* data, int width, int height, in
 	// write header info
 	file << "P6\n" << width << " " << height << "\n" << maxVal << "\n";
 
-	std::vector<char> image(width * height * 3);
+	std::vector<unsigned char> image(width * height * 3);
 	for (int row = 0; row < height; row++) {
 		for (int col = 0; col < width; col++) {
-			image[(row * width + col) * 3] = std::floor(255.999f * min(data[row * width + col].x, 1.0f));
-			image[(row * width + col) * 3 + 1] = std::floor(255.999f * min(data[row * width + col].y, 1.0f));
-			image[(row * width + col) * 3 + 2] = std::floor(255.999f * min(data[row * width + col].z, 1.0f));
+			image[(row * width + col) * 3] = floor(255.999f * min(data[row * width + col].x, 1.0f));
+			image[(row * width + col) * 3 + 1] = floor(255.999f * min(data[row * width + col].y, 1.0f));
+			image[(row * width + col) * 3 + 2] = floor(255.999f * min(data[row * width + col].z, 1.0f));
 		}
 	}
 	
 	// write image data
-	file.write(image.data(), image.size());
+	file.write(reinterpret_cast<char*>(image.data()), image.size());
 	file.close();
 }
 
