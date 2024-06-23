@@ -182,13 +182,12 @@ __kernel void traceSamples(__constant Camera* camera,
 		// trace the path of the ray throughout the scene
 		pixelColour += traceRay(spheres, nSpheres, maxDepth, &ray, &threadSeed);
 	}
-
-	// get final pixel colour from averaging samples, sqrt() for gamma correcting
+	
 	render[gid] += pixelColour;
 }
 
 __kernel void averageSamples(__global float3* render, uint nSamples) {
 	// get final pixel colour from averaging samples, sqrt() for gamma correcting
 	const uint gid = get_global_id(1) * get_global_size(0) + get_global_id(0);
-	render[gid] = half_sqrt(render[gid] / (float)nSamples);
+	render[gid] = min(half_sqrt(render[gid] / (float)nSamples), 0.999f);
 }
